@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEnd_Task</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" type="image/x-icon" href="Images/favicon.png">
+</head>
+
+<body class="light-mode">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar Offcanvas (موبايل + تابلت) -->
+            <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="sidebarMenu">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="index.html" class="nav-link"><i
+                                    class="fa fa-home me-2 text-warning"></i> Dashboard</a></li>
+                        <li class="nav-item mb-2"><a href="Users.html" class="nav-link"><i
+                                    class="fa fa-users me-2 text-primary"></i> Users</a></li>
+                        <li class="nav-item mb-2"><a href="Posts.html" class="nav-link"><i
+                                    class="fa fa-file-alt me-2 text-success"></i> Posts</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sidebar ثابت (Laptop/Desktop) -->
+            <div class="col-lg-2 min-vh-100 p-3 sidebar shadow-lg d-none d-lg-block sidebar-sticky">
+                <h5 class="mb-4 fw-bold animate__animated animate__fadeInLeft animate__fast">Menu</h5>
+                <ul class="nav flex-column animate__animated animate__fadeInLeft animate__slow">
+                    <li class="nav-item mb-2">
+                        <a href="index.html" class="nav-link sidebar-link">
+                            <i class="fa fa-home me-2 text-warning"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="Users.html" class="nav-link sidebar-link">
+                            <i class="fa fa-users me-2 text-primary"></i> Users
+                        </a>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <a href="Posts.html" class="nav-link sidebar-link">
+                            <i class="fa fa-file-alt me-2 text-success"></i> Posts
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-10 p-0">
+                <!-- Navbar -->
+                <nav class="navbar shadow-sm mb-3 sticky-top">
+                    <div class="container-fluid">
+                        <a class="navbar-brand fw-bold" href="index.html">My Dashboard</a>
+
+                        <div class="ms-auto d-flex align-items-center">
+                            <!-- Dark Mode -->
+                            <button class="btn me-2" id="toggleTheme">
+                                <i class="fa fa-moon"></i>
+                            </button>
+
+                            <!-- Sidebar Toggle -->
+                            <button class="btn d-lg-none" type="button" data-bs-toggle="offcanvas"
+                                data-bs-target="#sidebarMenu">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Main Content -->
+                <div class="p-5">
+                    <h2 class="mb-4 animate__animated animate__fadeInDown">Dashboard Statistics</h2>
+                    <div class="row g-4">
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="card shadow-lg border-0 rounded-5">
+                                <div class="card-body text-center animate__animated animate__zoomIn animate__slow">
+                                    <i class="fa fa-users fa-2x text-primary mb-2"></i>
+                                    <h5 class="card-title">Users</h5>
+                                    <h2 class="display-6 fw-bold text-primary" id="usersCount">0</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="card shadow-lg border-0 rounded-5">
+                                <div class="card-body text-center animate__animated animate__zoomIn animate__slow">
+                                    <i class="fa fa-file-alt fa-2x text-success mb-2"></i>
+                                    <h5 class="card-title">Posts</h5>
+                                    <h2 class="display-6 fw-bold text-success" id="postsCount">0</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="card shadow-lg border-0 rounded-5">
+                                <div class="card-body text-center animate__animated animate__zoomIn animate__slow">
+                                    <i class="fa fa-comments fa-2x text-warning mb-2"></i>
+                                    <h5 class="card-title">Comments</h5>
+                                    <h2 class="display-6 fw-bold text-warning" id="commentsCount">0</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Files -->
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="JS/script.js"></script>
+    <script src="JS/Posts.js"></script>
+    <script src="JS/User.js"></script>
+</body>
+
+</html>

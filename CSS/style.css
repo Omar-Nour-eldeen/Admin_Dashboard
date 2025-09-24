@@ -1,0 +1,186 @@
+/* ========== LIGHT MODE ========== */
+.light-mode {
+  background-color: #f5f7fa;
+  color: #212529;
+}
+
+.light-mode .navbar {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.light-mode .sidebar {
+  background: #f1f3f5;
+  color: #000;
+}
+
+.light-mode .sidebar-link {
+  color: #000;
+}
+
+.light-mode .card {
+  background-color: #ffffff;
+  color: #212529;
+}
+
+.light-mode .sidebar-link {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.light-mode .sidebar-link:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: translateX(5px);
+}
+
+.light-mode .sidebar-link i {
+  transition: transform 0.3s ease;
+}
+
+.light-mode .sidebar-link:hover i {
+  transform: scale(1.2);
+}
+
+.light-mode #toggleTheme{
+  color: #000;
+}
+
+.light-mode .comments .comment-item{
+  background-color: #fff;
+  color: #212529;
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.light-mode .comments .comment-item:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+/* ========== DARK MODE ========== */
+.dark-mode {
+  background-color: #181a1b;
+  color: #f8f9fa;
+}
+
+.dark-mode .navbar {
+  background: #212529;
+  color: #f8f9fa;
+}
+
+.dark-mode .navbar-brand{
+  color: #fff;
+}
+
+.dark-mode .sidebar {
+  background: #111;
+  color: #f8f9fa;
+}
+
+.dark-mode .sidebar-link {
+  color: #f8f9fa;
+}
+
+.dark-mode .card {
+  background-color: #242526;
+  color: #f8f9fa;
+}
+
+.dark-mode .sidebar-link {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.dark-mode .sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.dark-mode .sidebar-link i {
+  transition: transform 0.3s ease;
+}
+
+.dark-mode .sidebar-link:hover i {
+  transform: scale(1.2);
+}
+
+.dark-mode #toggleTheme{
+  color: #fff;
+}
+
+.dark-mode #searchInput{
+  border: 1px solid #444;
+}
+
+.dark-mode #searchInput::placeholder{
+  color: #fff;
+}
+
+.dark-mode #postsList .list-group-item {
+  background-color: #242526;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.dark-mode .comments .comment-item{
+  background-color: #242526;
+  color: #fff;
+  border: 1px solid #444;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .comments .comment-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+/*======================================*/
+
+.navbar-brand,#toggleTheme{
+  transition: transform 0.3s ease;
+}
+.navbar-brand:hover,#toggleTheme:hover{
+  transform: scale(1.1);
+}
+
+#usersTable tbody tr {
+  transition: all 0.2s ease-in-out;
+}
+
+#usersTable tbody tr:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  transform: scale(1.01);
+}
+
+.table .btn {
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.list-group-item .btn{
+  width: 7rem;
+}
+
+.sidebar-sticky{
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+/* Sidebar Offcanvas في وضع Dark Mode */
+.dark-mode .offcanvas {
+  background: #111 !important;
+  color: #f8f9fa;
+}
+
+.dark-mode .offcanvas .sidebar-link {
+  color: #f8f9fa;
+}
+
+.dark-mode .offcanvas .sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffd700; /* دهبي عند hover */
+}
+
+/* زرار Toggle (hamburger) يبقى أبيض */
+.dark-mode .navbar .btn[data-bs-toggle="offcanvas"] i {
+  color: #fff !important;
+}
